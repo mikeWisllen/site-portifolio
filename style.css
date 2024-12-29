@@ -160,6 +160,12 @@ header nav.menu-descktop ul li a.active{
     display: none;
 }
 
+@media (max-width: 1020px) {
+    .btn-abrir-menu {
+      display: block;
+    }
+  }
+
 
 /* ESTILO DO TOPO DO SITE */
 section.topo-do-site {
