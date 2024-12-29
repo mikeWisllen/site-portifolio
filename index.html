@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--final icons-->
     <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+
     <title>Portifolio Mike Wisllen</title>
 </head>
 <body>
@@ -25,29 +28,55 @@
 
             <nav class="menu-descktop">
                 <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Skill</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Portifolio</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#skill">Skill</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#portifolio">Portifolio</a></li>
                 </ul>
             </nav>
 
             <div class="btn-contato">
-                <a href="#"><button>Contato</button>
+                <a href="#">
+                    <button>Contato</button>
                 </a>
+            </div><!--btn-contato-->>
+
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
             </div>
 
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#skill">Skill</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#portifolio">Portifolio</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+
+
+            </div><!--menu-mobile-->>
+            <div class="overlay-menu" id="overlay-menu"></div>
         </div><!--interface-->>
     </header>
+
+
     <main>
-        <section class="topo-do-site">
+        <section class="topo-do-site" id="inicio">
             <div class="interface ">
                 <div class="flex">
                     <div class="txt-topo-do-site">
                         <h1>PROJETO DE PORTIFOLIO PESSOAL<span>.</span></h1>
-                        <p>Sou Mike Wisllen, apaixonado por tecnologia, desenvolvimento pessoal e soluções back-end.</p>
+                        <p>I'm <span class="typed" data-typed-items="Desenvolvedor, Backend, Front-end, Analista de redes, HelpDesk"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
                         <div class="btn-contato">
-                            <a href="#">
+                            <a href="https://docs.google.com/document/d/18MltA9UHU-mloY42v1hjeWhTlm8jYP8s8ROdSvCtKNI/export?format=pdf
+                            ">
                                 <button>Download CV</button>
                             </a>
                         </div>
@@ -59,7 +88,7 @@
             </div> <!--interface-->
         </section> <!-- topp do site -->
 
-        <section class="skills">
+        <section class="skills" id="skill">
             <div class="interface">
                 <h2 class="titulo">MINHAS <span>SKILLS.</span></h2>
                 <div class="flex">
@@ -84,8 +113,7 @@
                 </div><!--flex-->
             </div><!--interface-->
         </section><!--skills-->
-
-        <section class="sobre">
+        <section class="sobre" id="sobre">
             <div class="interface">
                 <div class="flex">
                     <div class="img-sobre">
@@ -109,14 +137,14 @@
             </div><!--interface-->
         </section><!--sobre-->
 
-        <section class="portifolio">
+        <section class="portifolio" id="portifolio">
             <div class="interface">
                 <h2 class="titulo">MEUS <span>PORTIFOLIOS.</span></h2>
                 <div class="flex">
                     <div class="img-port" style="background-image: url(images/projeto\ api.png);">
                         <div class="overlay">Projeto API</div>
                     </div>
-                    <div class="img-port" style="background-image: url(images/projeto\ api.png);">
+                    <div class="img-port" style="background-image: url(images/projeto\ site.png);">
                         <div class="overlay">Projeto SITE</div>
                     </div>
                     <div class="img-port" style="background-image: url(images/projeto\ api.png);">
@@ -126,7 +154,7 @@
             </div><!--interface-->
         </section><!--portifolio-->
 
-        <section class="formulario">
+        <section class="formulario" id="contato">
             <div class="interface">
                 <h2 class="titulo">FALE <span>COMIGO.</span></h2>
                 <form action="">
@@ -161,7 +189,20 @@
         </div><!--interface-->
     </footer>
 
-    <!-- script formulario -->
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const typedItems = document.querySelector(".typed").getAttribute("data-typed-items").split(", ");
+                new Typed(".typed", {
+                    strings: typedItems,
+                    typeSpeed: 50,
+                    backSpeed: 50,
+                    backDelay: 1500,
+                    loop: true,
+                });
+            });
+        </script>
+
+    
 </body>
 </html>
