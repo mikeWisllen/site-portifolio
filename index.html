@@ -36,7 +36,7 @@
             </nav>
 
             <div class="btn-contato">
-                <a href="#">
+                <a href="#contato">
                     <button>Contato</button>
                 </a>
             </div><!--btn-contato-->>
@@ -157,12 +157,13 @@
         <section class="formulario" id="contato">
             <div class="interface">
                 <h2 class="titulo">FALE <span>COMIGO.</span></h2>
-                <form action="">
-                    <input type="text" placeholder="Seu nome completo:" required>
-                    <input type="text" placeholder="Seu e-mail:" required>
-                    <input type="text" placeholder="Seu celular:">
-                    <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
-                    <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+                <form action="http://localhost:3000/send-email" method="POST">
+                    <input type="text" id="name" name="name" placeholder="Seu nome completo:" required>
+                    <input type="text" id="email" name="email" placeholder="Seu e-mail:" required>
+                    <input type="text" id="celular" name="celular" placeholder="Seu celular:">
+                    <textarea name="" id="mensagem" name="mensagem" placeholder="Sua mensagem" required></textarea>
+                    <div class="btn-enviar">
+                        <input type="submit" value="ENVIAR"></div>
                 </form>
             </div><!--interface-->
         </section><!--formulario-->
@@ -188,7 +189,7 @@
             </div><!--line-footer-->
         </div><!--interface-->
     </footer>
-
+    <!-- Animação de letra do home -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
@@ -200,9 +201,8 @@
                     backDelay: 1500,
                     loop: true,
                 });
-            });
+            }); 
         </script>
-
-    
+        
 </body>
 </html>
