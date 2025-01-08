@@ -158,16 +158,17 @@
         <section class="formulario" id="contato">
             <div class="interface">
                 <h2 class="titulo">FALE <span>COMIGO.</span></h2>
-                <form action="http://localhost:3000/send-email" method="POST">
+                <form action="projetoformulario.php" method="POST">
                     <input type="text" id="name" name="name" placeholder="Seu nome completo:" required>
                     <input type="text" id="email" name="email" placeholder="Seu e-mail:" required>
                     <input type="text" id="celular" name="celular" placeholder="Seu celular:">
-                    <textarea name="" id="mensagem" name="mensagem" placeholder="Sua mensagem" required></textarea>
+                    <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" required></textarea>
                     <div class="btn-enviar">
-                        <input type="submit" value="ENVIAR"></div>
+                        <input type="submit" value="ENVIAR">
+                    </div>
                 </form>
-            </div><!--interface-->
-        </section><!--formulario-->
+            </div> <!--interface-->
+        </section> <!--formulario-->
     </main>
 
     <footer>
