@@ -255,6 +255,7 @@ section.skills .flex {
     border-radius: 20px;
     margin-top: 45px;
     transition: .2s;
+    text-align: justify;
 }
 
 .skills .skills-box:hover {
@@ -410,7 +411,7 @@ form textarea {
 
 form textarea {
     resize: none;
-    max-height: 500px;
+    min-height: 13rem;
 }
 
 form .btn-enviar {
