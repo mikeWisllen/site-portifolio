@@ -11,45 +11,42 @@ module.exports = async function handler(req, res) {
     return res.status(200).end(); // Retorna 200 OK para requisições OPTIONS
   }
 
+  // Verifica se o método é POST
   if (req.method === 'POST') {
-    const { name, email, celular, message } = req.body;
-
-    // Validação de campos obrigatórios
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: 'Nome, e-mail e mensagem são obrigatórios.' });
-    }
-
-    // Configuração do Nodemailer
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    // Configuração do e-mail a ser enviado
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_DESTINATION,
-      subject: 'Novo formulário enviado',
-      text: JSON.stringify({ name, email, celular, message }, null, 2),
-    };
-
     try {
+      const { name, email, celular, message } = req.body || {};
+
+      // Validação de campos obrigatórios
+      if (!name || !email || !message) {
+        return res.status(400).json({ error: 'Nome, e-mail e mensagem são obrigatórios.' });
+      }
+
+      // Configuração do Nodemailer
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.EMAIL_USER, // Use variáveis de ambiente para segurança
+          pass: process.env.EMAIL_PASS,
+        },
+      });
+
+      // Configuração do e-mail a ser enviado
+      const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_DESTINATION || 'destinatario@example.com',
+        subject: 'Novo formulário enviado',
+        text: `Nome: ${name}\nE-mail: ${email}\nCelular: ${celular || 'Não informado'}\nMensagem: ${message}`,
+      };
+
       // Envia o e-mail
       await transporter.sendMail(mailOptions);
-      res.status(200).json({ message: 'E-mail enviado com sucesso!' });
+      return res.status(200).json({ message: 'E-mail enviado com sucesso!' });
     } catch (error) {
-      console.error('Erro ao enviar o e-mail:', error);
-      res.status(500).json({ error: 'Erro ao enviar o e-mail. Tente novamente mais tarde.' });
+      console.error('Erro ao enviar o e-mail:', error.message);
+      return res.status(500).json({ error: 'Erro ao enviar o e-mail. Tente novamente mais tarde.' });
     }
   } else {
     res.setHeader('Allow', ['POST', 'OPTIONS']);
-    res.status(405).end(`Método ${req.method} não permitido`);
+    return res.status(405).end(`Método ${req.method} não permitido`);
   }
-
-  console.log('EMAIL_USER:', process.env.EMAIL_USER);
-  console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? '******' : 'undefined');
-
 };
