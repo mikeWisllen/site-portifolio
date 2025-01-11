@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "nodemailer": "^6.9.16",
+    "vercel": "^39.2.6"
+  },
+  "scripts": {
+    "dev": "node api/form.js"
+  }
+}

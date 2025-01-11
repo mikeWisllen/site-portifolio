@@ -15,3 +15,23 @@
         menu.classList.remove('abrir-menu')
     })
     // final da aplicação lateral mobile
+
+    // fetch para enviar os dados para back
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+      
+        const jsonData = Object.fromEntries(data.entries());
+      
+        const response = await fetch('https://your-vercel-domain.vercel.app/api/form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(jsonData),
+        });
+      
+        const result = await response.json();
+        alert(result.message);
+      }
+      
+      document.querySelector('form').addEventListener('submit', handleSubmit);
+      
