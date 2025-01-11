@@ -1,41 +1,51 @@
 const nodemailer = require('nodemailer');
 
 module.exports = async function handler(req, res) {
+  // Configuração dos cabeçalhos de CORS
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Permite todas as origens
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Métodos permitidos
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Cabeçalhos permitidos
+
+  // Tratamento para o método OPTIONS
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end(); // Retorna 200 OK para requisições OPTIONS
+  }
+
   if (req.method === 'POST') {
     const { name, email, celular, message } = req.body;
 
-    // Validar campos obrigatórios
+    // Validação de campos obrigatórios
     if (!name || !email || !message) {
       return res.status(400).json({ error: 'Nome, e-mail e mensagem são obrigatórios.' });
     }
 
     // Configuração do Nodemailer
     const transporter = nodemailer.createTransport({
-      service: 'gmail', // Gmail ou outro serviço
+      service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER || "mikewisllen@gmail.com", // Usar variáveis de ambiente
-        pass: process.env.EMAIL_PASS || "phms nhvm rycr orpi",  // A senha do aplicativo Gmail
+        user: process.env.EMAIL_USER || "mikewisllen@gmail.com",
+        pass: process.env.EMAIL_PASS || "phms nhvm rycr orpi",
       },
     });
 
     // Configuração do e-mail a ser enviado
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_DESTINATION || 'mikewisllen@gmail.com', // Destinatário pode ser uma variável de ambiente
+      to: process.env.EMAIL_DESTINATION || 'mikewisllen@gmail.com',
       subject: 'Novo formulário enviado',
-      text: JSON.stringify({ name, email, celular, message }, null, 2), // JSON formatado para facilitar a leitura
+      text: JSON.stringify({ name, email, celular, message }, null, 2),
     };
 
     try {
-      // Enviar o e-mail
+      // Envia o e-mail
       await transporter.sendMail(mailOptions);
       res.status(200).json({ message: 'E-mail enviado com sucesso!' });
     } catch (error) {
-      console.error('Erro ao enviar o e-mail:', error); // Logar erro para facilitar a depuração
+      console.error('Erro ao enviar o e-mail:', error);
       res.status(500).json({ error: 'Erro ao enviar o e-mail. Tente novamente mais tarde.' });
     }
   } else {
-    res.setHeader('Allow', ['POST']);
-    res.status(405).end(`Método ${req.method} não permitido`); // Retorna erro para métodos não POST
+    res.setHeader('Allow', ['POST', 'OPTIONS']);
+    res.status(405).end(`Método ${req.method} não permitido`);
   }
 };
