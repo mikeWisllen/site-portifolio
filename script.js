@@ -23,6 +23,12 @@
     
       const jsonData = Object.fromEntries(data.entries());
     
+      // Validação no frontend
+      if (!jsonData.name || !jsonData.email || !jsonData.message) {
+        alert('Por favor, preencha os campos obrigatórios: Nome, E-mail e Mensagem.');
+        return;
+      }
+    
       try {
         const response = await fetch('https://site-portifolio-rose.vercel.app/api/form', {
           method: 'POST',
@@ -42,4 +48,5 @@
       }
     }
     
-    document.querySelector('form').addEventListener('submit', handleSubmit);    
+    document.querySelector('form').addEventListener('submit', handleSubmit);
+    
