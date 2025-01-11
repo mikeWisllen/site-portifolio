@@ -18,20 +18,40 @@
 
     // fetch para enviar os dados para back
     async function handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
+      event.preventDefault();
+    
+      // Cria um objeto FormData com os dados do formulário
+      const data = new FormData(event.target);
       
-        const jsonData = Object.fromEntries(data.entries());
-      
-        const response = await fetch('https://your-vercel-domain.vercel.app/api/form', {
+      // Converte FormData para um objeto JSON
+      const jsonData = Object.fromEntries(data.entries());
+    
+      // Envia os dados como uma requisição POST para a API
+      try {
+        const response = await fetch('https://site-portifolio-rose.vercel.app/api/form', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+          },
           body: JSON.stringify(jsonData),
         });
-      
-        const result = await response.json();
-        alert(result.message);
+    
+        // Verifica se a resposta da API foi bem-sucedida
+        if (response.ok) {
+          const result = await response.json();
+          alert(result.message); // Exibe mensagem de sucesso
+        } else {
+          const error = await response.json();
+          alert(error.error); // Exibe mensagem de erro
+        }
+      } catch (error) {
+        // Exibe um erro no caso de falha na requisição
+        console.error('Erro ao enviar o formulário:', error);
+        alert('Erro ao enviar o formulário. Tente novamente.');
       }
-      
-      document.querySelector('form').addEventListener('submit', handleSubmit);
+    }
+    
+    // Adiciona o ouvinte de evento ao formulário
+    document.querySelector('form').addEventListener('submit', handleSubmit);
+    
       
