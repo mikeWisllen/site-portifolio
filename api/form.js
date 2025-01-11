@@ -30,25 +30,27 @@ module.exports = async function handler(req, res) {
           user: process.env.EMAIL_USER, // Use variáveis de ambiente para segurança
           pass: process.env.EMAIL_PASS,
         },
+        debug: true, // Habilita debug
+        logger: true, // Mostra logs no console
       });
 
       // Configuração do e-mail a ser enviado
       const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_DESTINATION || 'destinatario@example.com',
+        to: process.env.EMAIL_DESTINATION,
         subject: 'Novo formulário enviado',
-        text: `Nome: ${name}\nE-mail: ${email}\nCelular: ${celular || 'Não informado'}\nMensagem: ${message}`,
+        text: JSON.stringify({ name, email, celular, message }, null, 2),
       };
 
       // Envia o e-mail
       await transporter.sendMail(mailOptions);
-      return res.status(200).json({ message: 'E-mail enviado com sucesso!' });
+      res.status(200).json({ message: 'E-mail enviado com sucesso!' });
     } catch (error) {
       console.error('Erro ao enviar o e-mail:', error.message);
-      return res.status(500).json({ error: 'Erro ao enviar o e-mail. Tente novamente mais tarde.' });
+      res.status(500).json({ error: 'Erro ao enviar o e-mail. Tente novamente mais tarde.' });
     }
   } else {
     res.setHeader('Allow', ['POST', 'OPTIONS']);
-    return res.status(405).end(`Método ${req.method} não permitido`);
+    res.status(405).end(`Método ${req.method} não permitido`);
   }
 };

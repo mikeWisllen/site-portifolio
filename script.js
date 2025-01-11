@@ -19,15 +19,32 @@
 // fetch para enviar os dados para back
 async function handleSubmit(event) {
   event.preventDefault();
-  const form = document.getElementById('contactForm');
-  const data = new FormData(form);
+  const data = new FormData(event.target);
   const jsonData = Object.fromEntries(data.entries());
 
   // Validação no frontend
+  document.querySelectorAll('input, textarea').forEach((input) => {
+    input.classList.remove('error');
+  });
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!jsonData.name || !jsonData.email || !jsonData.message) {
     alert('Por favor, preencha os campos obrigatórios: Nome, E-mail e Mensagem.');
+    if (!jsonData.name) document.querySelector('#name').classList.add('error');
+    if (!jsonData.email) document.querySelector('#email').classList.add('error');
+    if (!jsonData.message) document.querySelector('#message').classList.add('error');
     return;
   }
+
+  if (!emailRegex.test(jsonData.email)) {
+    alert('Por favor, insira um e-mail válido.');
+    document.querySelector('#email').classList.add('error');
+    return;
+  }
+
+  const submitButton = event.target.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  submitButton.textContent = 'Enviando...';
 
   try {
     const response = await fetch('https://site-portifolio-rose.vercel.app/api/form', {
@@ -41,13 +58,19 @@ async function handleSubmit(event) {
     }
 
     const result = await response.json();
-    alert(result.message || 'Formulário enviado com sucesso!');
+    alert(result.message);
+    window.location.href = 'https://mikewisllen.com.br/obrigado.html';
   } catch (error) {
-    console.error('Erro ao enviar o formulário:', error.message);
-    alert('Falha ao enviar o formulário. Por favor, tente novamente mais tarde.');
+    console.error('Erro ao enviar o formulário:', error);
+    alert('Falha ao enviar o formulário. Verifique sua conexão e tente novamente.');
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'ENVIAR';
   }
 }
 
-document.getElementById('contactForm').addEventListener('submit', handleSubmit);
+document.querySelector('form').addEventListener('submit', handleSubmit);
+
+
 
     
