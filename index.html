@@ -159,6 +159,10 @@
             <div class="interface">
                 <h2 class="titulo">FALE <span>COMIGO.</span></h2>
                 <form action="https://site-portifolio-rose.vercel.app/api/form" method="POST">
+                    <!-- Proteger contra spam -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Redirecionamento após envio -->
+                    <input type="hidden" name="_next" value="https://mikewisllen.com.br/obrigado.html">
                     <input type="text" id="name" name="name" placeholder="Seu nome completo:" required>
                     <input type="text" id="email" name="email" placeholder="Seu e-mail:" required>
                     <input type="text" id="celular" name="celular" placeholder="Seu celular:">
