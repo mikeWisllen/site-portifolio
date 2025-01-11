@@ -23,15 +23,15 @@ module.exports = async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER || "mikewisllen@gmail.com",
-        pass: process.env.EMAIL_PASS || "phms nhvm rycr orpi",
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     // Configuração do e-mail a ser enviado
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_DESTINATION || 'mikewisllen@gmail.com',
+      to: process.env.EMAIL_DESTINATION,
       subject: 'Novo formulário enviado',
       text: JSON.stringify({ name, email, celular, message }, null, 2),
     };

@@ -158,16 +158,11 @@
         <section class="formulario" id="contato">
             <div class="interface">
                 <h2 class="titulo">FALE <span>COMIGO.</span></h2>
-                <form action="https://site-portifolio-rose.vercel.app/api/form" method="POST">
-                    <!-- Proteger contra spam -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <!-- Redirecionamento após envio -->
-                    <input type="hidden" name="_next" value="https://mikewisllen.com.br/obrigado.html">
-                    
+                <form id="contactForm">
                     <input type="text" id="name" name="name" placeholder="Seu nome completo:" required>
-                    <input type="text" id="email" name="email" placeholder="Seu e-mail:" required>
+                    <input type="email" id="email" name="email" placeholder="Seu e-mail:" required>
                     <input type="text" id="celular" name="celular" placeholder="Seu celular:">
-                    <textarea id="mensage" name="mensage" placeholder="Sua mensagem" required></textarea>
+                    <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
                     <div class="btn-enviar">
                         <input type="submit" value="ENVIAR">
                     </div>
