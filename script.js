@@ -18,33 +18,23 @@
 
 // fetch para enviar os dados para back
 async function handleSubmit(event) {
-  event.preventDefault(); // Previne o comportamento padrão do formulário
+  event.preventDefault();
+  const data = new FormData(event.target);
 
-  const formData = new FormData(event.target);
-  const jsonData = Object.fromEntries(formData.entries()); // Converte o FormData para JSON
+  const jsonData = Object.fromEntries(data.entries());
 
-  try {
-    const response = await fetch('https://site-portifolio-rose.vercel.app/api/form', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json', // Certifica-se de enviar como JSON
-      },
-      body: JSON.stringify(jsonData), // Converte os dados para string JSON
-    });
+  const response = await fetch('https://your-vercel-domain.vercel.app/api/form', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(jsonData),
+  });
 
-    if (!response.ok) {
-      throw new Error(`Erro: ${response.status} - ${response.statusText}`);
-    }
-
-    const result = await response.json();
-    alert(result.message); // Exibe a mensagem de sucesso ou erro
-  } catch (error) {
-    console.error('Erro ao enviar o formulário:', error);
-    alert('Erro ao enviar o formulário. Tente novamente.');
-  }
+  const result = await response.json();
+  alert(result.message);
 }
 
 document.querySelector('form').addEventListener('submit', handleSubmit);
+
 
 
 
