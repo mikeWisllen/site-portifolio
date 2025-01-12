@@ -17,59 +17,66 @@
     // final da aplicação lateral mobile
 
 // fetch para enviar os dados para back
-async function handleSubmit(event) {
-  event.preventDefault();
-  const data = new FormData(event.target);
-  const jsonData = Object.fromEntries(data.entries());
+document.addEventListener('DOMContentLoaded', () => {
+  async function handleSubmit(event) {
+    event.preventDefault();
 
-  // Validação no frontend
-  document.querySelectorAll('input, textarea').forEach((input) => {
-    input.classList.remove('error');
-  });
+    const submitButton = document.querySelector('form#contactForm input[type="submit"]');
+    const form = document.getElementById('contactForm');
+    const formData = new FormData(form);
+    const jsonData = Object.fromEntries(formData.entries());
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!jsonData.name || !jsonData.email || !jsonData.message) {
-    alert('Por favor, preencha os campos obrigatórios: Nome, E-mail e Mensagem.');
-    if (!jsonData.name) document.querySelector('#name').classList.add('error');
-    if (!jsonData.email) document.querySelector('#email').classList.add('error');
-    if (!jsonData.message) document.querySelector('#message').classList.add('error');
-    return;
-  }
+    console.log('Dados do formulário:', jsonData); // Verificar os dados coletados
 
-  if (!emailRegex.test(jsonData.email)) {
-    alert('Por favor, insira um e-mail válido.');
-    document.querySelector('#email').classList.add('error');
-    return;
-  }
-
-  const submitButton = event.target.querySelector('button[type="submit"]');
-  submitButton.disabled = true;
-  submitButton.textContent = 'Enviando...';
-
-  try {
-    const response = await fetch('https://site-portifolio-rose.vercel.app/api/form', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(jsonData),
-    });
-
-    if (!response.ok) {
-      throw new Error(`Erro: ${response.status} - ${response.statusText}`);
+    // Validação no frontend
+    if (!jsonData.name || !jsonData.email || !jsonData.message) {
+      alert('Por favor, preencha os campos obrigatórios: Nome, E-mail e Mensagem.');
+      return;
     }
 
-    const result = await response.json();
-    alert(result.message);
-    window.location.href = 'https://mikewisllen.com.br/obrigado.html';
-  } catch (error) {
-    console.error('Erro ao enviar o formulário:', error);
-    alert('Falha ao enviar o formulário. Verifique sua conexão e tente novamente.');
-  } finally {
-    submitButton.disabled = false;
-    submitButton.textContent = 'ENVIAR';
-  }
-}
+    try {
+      // Desabilita o botão e muda o texto
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.value = 'Enviando...';
+      }
 
-document.querySelector('form').addEventListener('submit', handleSubmit);
+      const response = await fetch('https://site-portifolio-rose.vercel.app/api/form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(jsonData),
+      });
+
+      console.log('Resposta do servidor:', response);
+
+      if (!response.ok) {
+        throw new Error(`Erro no servidor: ${response.status} - ${response.statusText}`);
+      }
+
+      const result = await response.json();
+      console.log('Resultado do envio:', result);
+
+      alert(result.message);
+      form.reset(); // Limpa o formulário
+    } catch (error) {
+      console.error('Erro ao enviar o formulário:', error);
+      alert('Falha ao enviar o formulário. Verifique sua conexão e tente novamente.');
+    } finally {
+      // Reabilita o botão e restaura o texto
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.value = 'ENVIAR';
+      }
+    }
+  }
+
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', handleSubmit);
+  } else {
+    console.error('Formulário com ID "contactForm" não encontrado no DOM.');
+  }
+});
 
 
 

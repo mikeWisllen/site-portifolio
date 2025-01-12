@@ -23,6 +23,11 @@ module.exports = async function handler(req, res) {
         return res.status(400).json({ error: 'Nome, e-mail e mensagem são obrigatórios.' });
       }
 
+      console.log('EMAIL_USER:', process.env.EMAIL_USER);
+      console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? '****' : 'undefined');
+      console.log('EMAIL_DESTINATION:', process.env.EMAIL_DESTINATION);
+
+
       // Configuração do Nodemailer
       const transporter = nodemailer.createTransport({
         service: 'gmail',
