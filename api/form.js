@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 module.exports = async function handler(req, res) {
   // Configuração dos cabeçalhos de CORS
-  res.setHeader('Access-Control-Allow-Origin', '*'); // Permite todas as origens
+  res.setHeader('Access-Control-Allow-Origin', 'https://mikewisllen.com.br'); // Permite todas as origens
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Métodos permitidos
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Cabeçalhos permitidos
 
