@@ -24,7 +24,7 @@
       const data = Object.fromEntries(formData.entries());
   
       try {
-        const response = await fetch('https://api-drab-nu-62.vercel.app/server', {
+        const response = await fetch('https://api-drab-nu-62.vercel.app/api/server', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
