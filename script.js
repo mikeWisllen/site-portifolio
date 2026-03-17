@@ -20,8 +20,14 @@
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
+      
+      // Coleta de dados mais robusta
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        celular: document.getElementById('celular').value,
+        message: document.getElementById('message').value
+      };
   
       try {
         const response = await fetch('https://api-drab-nu-62.vercel.app/api/server', {
@@ -32,7 +38,9 @@
   
         if (response.ok) {
           const btnEnviar = document.querySelector('.btn-enviar');
-          btnEnviar.innerHTML = '<p style="color: #765898; font-weight: bold;">Enviado com sucesso! Redirecionando...</p>';
+          if (btnEnviar) {
+            btnEnviar.innerHTML = '<p style="color: #765898; font-weight: bold;">Enviado com sucesso! Redirecionando...</p>';
+          }
           
           // Adiciona o link do CSS dinamicamente como solicitado
           const link = document.createElement('link');
@@ -42,12 +50,13 @@
 
           setTimeout(() => {
             window.location.href = 'obrigado.html';
-          }, 1500);
+          }, 1000); // Reduzido para 1 segundo para maior agilidade
         } else {
+          console.error('API retornou erro:', response.status);
           window.location.href = 'erro.html';
         }
       } catch (error) {
-        console.error(error);
+        console.error('Erro de rede ou script:', error);
         window.location.href = 'erro.html';
       }
     });
