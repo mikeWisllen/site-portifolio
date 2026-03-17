@@ -8,7 +8,6 @@
 
 body {
     background-color: black;
-    height: 100vh;
 }
 
 .interface {
@@ -73,7 +72,7 @@ header a {
     transition: .2s;
 }
 
-header nav.menu-descktop a:hover {
+header nav.menu-desktop a:hover {
     color: #fff;
     transform: scale(1.05);
 }
@@ -82,12 +81,12 @@ header nav ul {
     list-style-type: none;
 }
 
-header nav.menu-descktop ul li {
+header nav.menu-desktop ul li {
     display: inline-block;
     padding: 0 40px;
 }
 
-header nav.menu-descktop ul li a.active{
+header nav.menu-desktop ul li a.active{
     color: #765898;
     font-weight: bold;
     text-decoration: underline;
@@ -230,7 +229,7 @@ section.topo-do-site .flex {
     font-weight: bold;
     color: #fff;
     font-size: 20px;
-    transition: .2;
+    transition: .2s;
     transform: scale(1.05);
 }
 .typed-cursor {
@@ -246,14 +245,14 @@ section.skills {
 }
 
 section.skills .flex {
-    gap: 60px;
+    gap: 30px;
 }
 
 .skills .skills-box {
     color: #fff;
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
-    margin-top: 45px;
+    margin-top: 20px;
     transition: .2s;
     text-align: justify;
 }
@@ -264,13 +263,19 @@ section.skills .flex {
 }
 
 .skills .skills-box i {
-    font-size: 70px;
+    font-size: 60px;
     color: #765898;
 }
 
 .skills .skills-box h3 {
-    font-size: 28px;
-    margin: 15px 0;
+    font-size: 24px;
+    margin: 10px 0 8px 0;
+}
+
+.skills .skills-box p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 14px;
 }
 
 /* ESTILO SOBRE */
@@ -350,7 +355,7 @@ section.portifolio .flex {
     height: 460px;
     background-size: cover;
     background-position: 100% 0%;
-    transition: 8s;
+    transition: 1.5s ease-in-out;
     cursor: pointer;
     border-radius: 40px;
     position: relative;
