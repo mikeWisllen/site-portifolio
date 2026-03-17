@@ -31,13 +31,24 @@
         });
   
         if (response.ok) {
-          alert('Formulário enviado com sucesso!');
+          const btnEnviar = document.querySelector('.btn-enviar');
+          btnEnviar.innerHTML = '<p style="color: #765898; font-weight: bold;">Enviado com sucesso! Redirecionando...</p>';
+          
+          // Adiciona o link do CSS dinamicamente como solicitado
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'thank.css';
+          document.head.appendChild(link);
+
+          setTimeout(() => {
+            window.location.href = 'obrigado.html';
+          }, 1500);
         } else {
-          alert('Erro ao enviar o formulário.');
+          window.location.href = 'erro.html';
         }
       } catch (error) {
         console.error(error);
-        alert('Erro ao enviar o formulário.');
+        window.location.href = 'erro.html';
       }
     });
     
