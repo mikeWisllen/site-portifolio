@@ -41,16 +41,10 @@
           if (btnEnviar) {
             btnEnviar.innerHTML = '<p style="color: #765898; font-weight: bold;">Enviado com sucesso! Redirecionando...</p>';
           }
-          
-          // Adiciona o link do CSS dinamicamente como solicitado
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = 'thank.css';
-          document.head.appendChild(link);
 
           setTimeout(() => {
             window.location.href = 'obrigado.html';
-          }, 1000); // Reduzido para 1 segundo para maior agilidade
+          }, 1500);
         } else {
           console.error('API retornou erro:', response.status);
           window.location.href = 'erro.html';
