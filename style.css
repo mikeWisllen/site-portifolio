@@ -69,7 +69,7 @@ header a {
     color: #5c5c5c;
     text-decoration: none;
     display: inline-block;
-    transition: .3s ease-in-out;
+    transition: .2s;
 }
 
 header nav.menu-desktop a:hover {
@@ -90,8 +90,6 @@ header nav.menu-desktop ul li a.active{
     color: #765898;
     font-weight: bold;
     text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 8px;
 }
 
 /* ESTILO MENU MOBILE */
@@ -143,13 +141,6 @@ header nav.menu-desktop ul li a.active{
     font-weight: 300;
     padding:  20px 8%;
     display: block;
-    transition: .3s ease-in-out;
-}
-
-.menu-mobile nav ul li a.active{
-    background-color: #765898;
-    color: #000;
-    font-weight: 600;
 }
 
 .menu-mobile nav ul li a:hover{
@@ -189,7 +180,7 @@ section.topo-do-site .flex {
 .topo-do-site h1 {
     color: #fff;
     font-size: 42px;
-    line-height: 1.2;
+    line-height: 40px;
 
 }
 
@@ -200,7 +191,6 @@ section.topo-do-site .flex {
 .topo-do-site .txt-topo-do-site p {
     color: #fff;
     margin: 40px 0;
-    font-size: 18px;
 }
 
 .topo-do-site .img-topo-do-site img {
@@ -286,7 +276,6 @@ section.skills .flex {
     margin: 0;
     line-height: 1.6;
     font-size: 14px;
-    word-spacing: -0.05em;
 }
 
 /* ESTILO SOBRE */
@@ -296,7 +285,7 @@ section.sobre {
 
 section.sobre .flex {
     align-items: center;
-    gap: 40px;
+    gap: 60px;
 }
 
 .sobre .txt-sobre {
@@ -304,9 +293,9 @@ section.sobre .flex {
 }
 
 .sobre .txt-sobre h2 {
-    font-size: 38px;
-    line-height: 1.2;
-    margin-bottom: 25px;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
 }
 
 .sobre .txt-sobre h2 span {
@@ -315,10 +304,8 @@ section.sobre .flex {
 }
 
 .sobre .txt-sobre p {
-    margin: 15px 0;
+    margin: 20px 0;
     text-align: justify;
-    line-height: 1.6;
-    word-spacing: -0.02em;
 }
 
 
@@ -368,7 +355,7 @@ section.portifolio .flex {
     height: 460px;
     background-size: cover;
     background-position: 100% 0%;
-    transition: 1.5s ease-in-out;
+    transition: 8s;
     cursor: pointer;
     border-radius: 40px;
     position: relative;
@@ -393,7 +380,7 @@ section.portifolio .flex {
     font-weight: 600;
     color: #fff;
     opacity: 0;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .overlay:hover {
@@ -411,7 +398,7 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     margin-top: 40px;
 }
 
@@ -421,15 +408,15 @@ form textarea {
     background-color: #242424;
     border: 0;
     outline: 0;
-    padding: 16px 12px;
-    border-radius: 12px;
+    padding: 20px 15px;
+    border-radius: 15px;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 form textarea {
     resize: none;
-    min-height: 11rem;
+    min-height: 13rem;
 }
 
 form .btn-enviar {
@@ -520,28 +507,15 @@ footer .line-footer p a {
 
     .topo-do-site h1 {
         font-size: 30px;
-        text-align: center;
     }
 
-    .topo-do-site .txt-topo-do-site p {
-        text-align: center;
-        margin: 20px 0;
-    }
-
-    .topo-do-site .img-topo-do-site img {
+    .topo-do-site .img-topo-site img {
         width: 100%;
-        max-width: 300px;
-        display: block;
-        margin: 0 auto;
     }
 
     /* ESPECIALIDADES */
     section.skills {
         padding: 40px 8%;
-    }
-
-    .skills .skills-box {
-        text-align: center;
     }
 
     /* SOBRE */
@@ -554,10 +528,6 @@ footer .line-footer p a {
         line-height: 35px;
         text-align: center;
     }
-
-    .sobre .txt-sobre p {
-        text-align: center;
-    }
     
     .btn-social{
         text-align: center;
@@ -568,7 +538,7 @@ footer .line-footer p a {
     }
 
     /* PORTFÓLIO */
-    section.portifolio {
+    section.portfolio {
         padding: 80px 8%;
     }
 
@@ -578,7 +548,7 @@ footer .line-footer p a {
         margin: 0 auto;
     }
     
-    section.portifolio .flex {
+    section.portfolio .flex {
        gap: 80px;
     }
 
