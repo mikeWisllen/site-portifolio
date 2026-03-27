@@ -69,7 +69,7 @@ header a {
     color: #5c5c5c;
     text-decoration: none;
     display: inline-block;
-    transition: .2s;
+    transition: .3s ease-in-out;
 }
 
 header nav.menu-desktop a:hover {
@@ -90,6 +90,8 @@ header nav.menu-desktop ul li a.active{
     color: #765898;
     font-weight: bold;
     text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
 }
 
 /* ESTILO MENU MOBILE */
@@ -141,6 +143,13 @@ header nav.menu-desktop ul li a.active{
     font-weight: 300;
     padding:  20px 8%;
     display: block;
+    transition: .3s ease-in-out;
+}
+
+.menu-mobile nav ul li a.active{
+    background-color: #765898;
+    color: #000;
+    font-weight: 600;
 }
 
 .menu-mobile nav ul li a:hover{
