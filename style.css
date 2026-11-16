@@ -490,9 +490,9 @@ footer .line-footer p a {
     }
 
     /* CABEÇALHO */
-    .menu-descktop, .btn-contato {
+    .menu-desktop, header .btn-contato {
         display: none;
-        
+
     }
 
     /* TOPO DO SITE */
