@@ -3,174 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike Wisllen | Desenvolvedor Backend, Redes e Suporte</title>
+    <meta name="description" content="Portfólio de Mike Wisllen: desenvolvimento backend em C#, .NET e Node, infraestrutura de redes e suporte técnico.">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://mikewisllen.com.br/">
+
+    <!-- Prévia ao compartilhar o link -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://mikewisllen.com.br/">
+    <meta property="og:title" content="Mike Wisllen | Desenvolvedor Backend, Redes e Suporte">
+    <meta property="og:description" content="Do código ao servidor em produção: backend em C#, .NET e Node, redes e suporte técnico.">
+    <meta property="og:image" content="https://mikewisllen.com.br/images/logo2.jpg">
+
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-     <!-- final google fonts -->
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- bootstrapicons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!--final icons-->
     <link rel="stylesheet" href="style.css">
 
-    <script src="script.js" defer></script>
-
     <link rel="shortcut icon" href="images/controller.svg" type="image/x-icon">
-    <title>Pupunhacomcafe</title>
+
+    <!-- Animação de letra do home -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="interface">
             <div class="logo">
-                <a href="#"><img src="images/logo2.jpg" alt="Logo Mike">
-                </a>
+                <a href="#inicio"><img src="images/logo2.jpg" alt="Logo EVA-01 de Mike Wisllen"></a>
             </div><!--logo-->
-        
 
-            <nav class="menu-desktop">
+            <nav class="menu-desktop" aria-label="Principal">
                 <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#skill">Skills</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#portifolio">Portfólio</a></li>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#skill">Skills</a></li>
+                    <li><a href="#trajetoria">Trajetória</a></li>
+                    <li><a href="#portifolio">Projetos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
                 </ul>
             </nav>
 
             <div class="btn-contato">
-                <a href="#contato">
-                    <button>Contato</button>
-                </a>
+                <a class="btn" href="#contato">Contato</a>
             </div><!--btn-contato-->
 
-            <div class="btn-abrir-menu" id="btn-menu">
+            <button class="btn-abrir-menu" id="btn-menu" type="button" aria-label="Abrir menu">
                 <i class="bi bi-list"></i>
-            </div>
+            </button>
 
             <div class="menu-mobile" id="menu-mobile">
                 <div class="btn-fechar">
                     <i class="bi bi-x-lg"></i>
                 </div>
 
-                <nav>
+                <nav aria-label="Menu mobile">
                     <ul>
                         <li><a href="#inicio">Início</a></li>
                         <li><a href="#skill">Skills</a></li>
+                        <li><a href="#trajetoria">Trajetória</a></li>
+                        <li><a href="#portifolio">Projetos</a></li>
                         <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#portifolio">Portfólio</a></li>
                         <li><a href="#contato">Contato</a></li>
                     </ul>
                 </nav>
-
-
             </div><!--menu-mobile-->
             <div class="overlay-menu" id="overlay-menu"></div>
         </div><!--interface-->
     </header>
 
-
     <main>
         <section class="topo-do-site" id="inicio">
-            <div class="interface ">
+            <div class="interface">
                 <div class="flex">
                     <div class="txt-topo-do-site">
-                        <h1>PROJETO DE PORTFÓLIO PESSOAL<span>.</span></h1>
-                        <p>I'm <span class="typed" data-typed-items="Desenvolvedor, Backend, Front-end, Analista de redes, HelpDesk"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-                        <div class="btn-contato">
-                            <a href="https://docs.google.com/document/d/18MltA9UHU-mloY42v1hjeWhTlm8jYP8s8ROdSvCtKNI/export?format=pdf
-                            ">
-                                <button>Download CV</button>
-                            </a>
+                        <p class="etiqueta"><span class="led"></span>Sistema online // Pupunha com Café</p>
+                        <h1>MIKE WISLLEN<span>.</span></h1>
+                        <p class="chamada">Do código ao servidor em produção: backend, redes e suporte na mesma pessoa.</p>
+                        <p class="linha-typed">&gt; <span class="typed" data-typed-items="Desenvolvedor Backend, Analista de Redes, Suporte HelpDesk, Gamer nas horas vagas"></span></p>
+                        <div class="acoes">
+                            <a class="btn" href="#portifolio">Ver projetos</a>
+                            <a class="btn btn-contorno" href="https://docs.google.com/document/d/18MltA9UHU-mloY42v1hjeWhTlm8jYP8s8ROdSvCtKNI/export?format=pdf"><i class="bi bi-download"></i> Baixar CV</a>
                         </div>
-                    </div> <!-- txt-topp do site -->
+                    </div><!--txt-topo-do-site-->
                     <div class="img-topo-do-site">
-                        <img src="images/pessoal.png" alt="imagem do topo site">
-                    </div> <!--img-topp do site-->
-                </div> <!--flex-->
-            </div> <!--interface-->
-        </section> <!-- topp do site -->
+                        <img src="images/pessoal.png" alt="" width="260" height="240">
+                    </div><!--img-topo-do-site-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--topo-do-site-->
 
         <section class="skills" id="skill">
             <div class="interface">
+                <p class="numero-secao">01 // Skills</p>
                 <h2 class="titulo">MINHAS <span>SKILLS.</span></h2>
-                <div class="flex">
+                <div class="grade-skills">
 
                     <div class="skills-box">
                         <i class="bi bi-code-square"></i>
                         <h3>Backend</h3>
-                        <p>Especialista em desenvolvimento back-end com experiência em C#, .NET, Node, PHP e AWS. Criação de soluções robustas e escaláveis.</p>
+                        <p>APIs e serviços pensados para aguentar produção, do banco de dados à nuvem.</p>
+                        <ul class="tags">
+                            <li>C#</li>
+                            <li>.NET</li>
+                            <li>Node.js</li>
+                            <li>PHP</li>
+                            <li>AWS</li>
+                        </ul>
                     </div><!--skills-box-->
 
                     <div class="skills-box">
                         <i class="bi bi-wifi"></i>
                         <h3>Redes</h3>
-                        <p>Experiência em gerenciamento e configuração de infraestrutura industrial. Virtualização de servidores e conhecimento em plataformas como Zabbix e Grafana.</p>
+                        <p>Gerenciamento e configuração de infraestrutura industrial, com servidores virtualizados e monitorados.</p>
+                        <ul class="tags">
+                            <li>Zabbix</li>
+                            <li>Grafana</li>
+                            <li>Virtualização</li>
+                            <li>Infraestrutura</li>
+                        </ul>
                     </div><!--skills-box-->
 
                     <div class="skills-box">
                         <i class="bi bi-pc-display"></i>
                         <h3>HelpDesk</h3>
-                        <p>Especializado em atendimento helpdesk com resolução de problemas em hardware e software. Configuração de dispositivos e suporte a sistemas operacionais.</p>
+                        <p>Atendimento e resolução de problemas de hardware e software, direto com quem usa o sistema.</p>
+                        <ul class="tags">
+                            <li>Hardware</li>
+                            <li>Sistemas operacionais</li>
+                            <li>Configuração de dispositivos</li>
+                        </ul>
                     </div><!--skills-box-->
-                </div><!--flex-->
+                </div><!--grade-skills-->
             </div><!--interface-->
         </section><!--skills-->
+
+        <section class="trajetoria" id="trajetoria">
+            <div class="interface">
+                <p class="numero-secao">02 // Trajetória</p>
+                <h2 class="titulo">DO SUPORTE <span>AO CÓDIGO.</span></h2>
+                <ol class="linha-tempo">
+                    <li>
+                        <span class="fase">Fase 01</span>
+                        <h3>Suporte</h3>
+                        <p>No helpdesk aprendi a ouvir o usuário e a achar a causa do problema, em hardware e em software.</p>
+                    </li>
+                    <li>
+                        <span class="fase">Fase 02</span>
+                        <h3>Infraestrutura</h3>
+                        <p>Em redes passei a cuidar do que fica por trás: servidores virtualizados, infraestrutura industrial e monitoramento com Zabbix e Grafana.</p>
+                    </li>
+                    <li>
+                        <span class="fase">Fase 03</span>
+                        <h3>Desenvolvimento</h3>
+                        <p>Hoje escrevo o backend em C#, .NET e Node, sabendo como ele vai rodar no servidor e quem vai ligar quando ele cair.</p>
+                    </li>
+                </ol>
+            </div><!--interface-->
+        </section><!--trajetoria-->
+
+        <section class="portifolio" id="portifolio">
+            <div class="interface">
+                <p class="numero-secao">03 // Projetos</p>
+                <h2 class="titulo">MEUS <span>PROJETOS.</span></h2>
+                <div class="grade-projetos">
+
+                    <a class="projeto" href="https://github.com/mikeWisllen/minimal-api" target="_blank" rel="noopener">
+                        <div class="img-port" style="background-image: url('images/projeto%20api.png');"></div>
+                        <div class="projeto-corpo">
+                            <h3>Minimal API</h3>
+                            <p>API REST construída com Minimal APIs do .NET, em C#.</p>
+                            <ul class="tags">
+                                <li>C#</li>
+                                <li>.NET</li>
+                                <li>API REST</li>
+                            </ul>
+                            <span class="projeto-link">Ver no GitHub <i class="bi bi-arrow-up-right"></i></span>
+                        </div>
+                    </a>
+
+                    <a class="projeto" href="https://github.com/mikeWisllen/site-portifolio" target="_blank" rel="noopener">
+                        <div class="img-port" style="background-image: url('images/projeto%20site.png');"></div>
+                        <div class="projeto-corpo">
+                            <h3>Este portfólio</h3>
+                            <p>Site em HTML, CSS e JavaScript puro, com formulário de contato ligado a uma API própria na Vercel.</p>
+                            <ul class="tags">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Vercel</li>
+                            </ul>
+                            <span class="projeto-link">Ver no GitHub <i class="bi bi-arrow-up-right"></i></span>
+                        </div>
+                    </a>
+
+                    <a class="projeto" href="https://github.com/mikeWisllen/trilha-net-banco-de-dados-desafio" target="_blank" rel="noopener">
+                        <div class="img-port img-port-codigo" aria-hidden="true">
+<pre><span class="c">-- desafio DIO</span>
+<span class="k">SELECT</span> nome, ano
+<span class="k">FROM</span> filmes
+<span class="k">WHERE</span> ano &gt; 2000
+<span class="k">ORDER BY</span> ano;</pre>
+                        </div>
+                        <div class="projeto-corpo">
+                            <h3>Desafio de banco de dados</h3>
+                            <p>Consultas em T-SQL do desafio de banco de dados da trilha .NET da DIO.</p>
+                            <ul class="tags">
+                                <li>T-SQL</li>
+                                <li>SQL Server</li>
+                            </ul>
+                            <span class="projeto-link">Ver no GitHub <i class="bi bi-arrow-up-right"></i></span>
+                        </div>
+                    </a>
+                </div><!--grade-projetos-->
+                <p class="mais-projetos"><a href="https://github.com/mikeWisllen?tab=repositories" target="_blank" rel="noopener">Ver todos os repositórios no GitHub <i class="bi bi-arrow-right"></i></a></p>
+            </div><!--interface-->
+        </section><!--portifolio-->
+
         <section class="sobre" id="sobre">
             <div class="interface">
                 <div class="flex">
                     <div class="img-sobre">
-                        <img src="images/foto-perfil.png" alt="foto perfil">
+                        <img src="images/foto-perfil.png" alt="Foto de Mike Wisllen" width="850" height="912" loading="lazy">
                     </div><!--img-sobre-->
                     <div class="txt-sobre">
-                        <h2>HELLO DEVS, <span>
-                            ME CHAMO MIKE WISLLEN.
-                        </span></h2>
-                        <P>Sou uma pessoa apaixonada por tecnologia, games e pela conexão que esses universos criam entre as pessoas. Além do meu interesse profissional em Desenvolvimento e Análise de Sistemas, encontro equilíbrio e inspiração na minha família, que é meu alicerce e motivação diária.
-
-                            No tempo livre, adoro explorar o mundo dos games, que considero uma forma incrível de criatividade, estratégia e diversão. Essa paixão reflete meu gosto por aprender coisas novas e enfrentar desafios, tanto na vida pessoal quanto profissional.</P>
-                        <P>Valorizo a pesquisa e o aprendizado contínuo, mantendo-me atualizado sobre tendências tecnológicas para oferecer soluções inovadoras e alinhadas às necessidades do mercado. Sou comprometido em entregar resultados com precisão, integridade e alto padrão técnico.</P>
-                    <div class="btn-social">
-                        <a href="https://www.instagram.com/mikewisllen/"><button><i class="bi bi-instagram"></i></button></a>
-                        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><button><i class="bi bi-linkedin"></i></button></a>
-                        <a href="https://github.com/mikeWisllen"><button><i class="bi bi-github"></i></button></a>
-                    </div>
+                        <p class="numero-secao">04 // Sobre</p>
+                        <h2>OLÁ, DEVS. <span>ME CHAMO MIKE WISLLEN.</span></h2>
+                        <p>Sou apaixonado por tecnologia, games e pela conexão que esses universos criam entre as pessoas. Minha família é meu alicerce e minha motivação diária.</p>
+                        <p>No tempo livre exploro o mundo dos games, que para mim é criatividade, estratégia e diversão. É o mesmo gosto por aprender coisas novas e enfrentar desafios que levo para o trabalho.</p>
+                        <div class="btn-social">
+                            <a href="https://www.instagram.com/mikewisllen/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com/mikeWisllen" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        </div>
                     </div><!--txt-sobre-->
-                </div><!--flex-->   
+                </div><!--flex-->
             </div><!--interface-->
         </section><!--sobre-->
 
-        <section class="portifolio" id="portifolio">
-            <div class="interface">
-                <h2 class="titulo">MEUS <span>PORTFÓLIOS.</span></h2>
-                <div class="flex">
-                    <div class="img-port" style="background-image: url(images/projeto\ api.png);">
-                        <div class="overlay">Projeto API</div>
-                    </div>
-                    <div class="img-port" style="background-image: url(images/projeto\ site.png);">
-                        <div class="overlay">Projeto SITE</div>
-                    </div>
-                    <div class="img-port" style="background-image: url(images/projeto\ api.png);">
-                        <div class="overlay">Projeto BANCO DE DADOS</div>
-                    </div>
-                </div><!--flex-->
-            </div><!--interface-->
-        </section><!--portifolio-->
-
         <section class="formulario" id="contato">
             <div class="interface">
+                <p class="numero-secao">05 // Contato</p>
                 <h2 class="titulo">FALE <span>COMIGO.</span></h2>
-                <form id="contactForm">
-                    <input type="text" id="name" name="name" placeholder="Seu nome completo:" required>
-                    <input type="email" id="email" name="email" placeholder="Seu e-mail:" required>
-                    <input type="text" id="celular" name="celular" placeholder="Seu celular:">
-                    <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
-                    <div class="btn-enviar">
-                        <input type="submit" value="ENVIAR">
+                <div class="contato-grade">
+                    <div class="contato-direto">
+                        <p>Tem uma vaga, um projeto ou só quer trocar uma ideia sobre tecnologia? Mande uma mensagem pelo formulário ou me chame direto.</p>
+                        <a class="canal" href="mailto:mikewisllen@gmail.com"><i class="bi bi-envelope"></i> mikewisllen@gmail.com</a>
+                        <a class="canal" href="https://github.com/mikeWisllen" target="_blank" rel="noopener"><i class="bi bi-github"></i> github.com/mikeWisllen</a>
+                        <a class="canal" href="https://www.instagram.com/mikewisllen/" target="_blank" rel="noopener"><i class="bi bi-instagram"></i> @mikewisllen</a>
                     </div>
-                </form>
-            </div> <!--interface-->
-        </section> <!--formulario-->
+                    <form id="contactForm">
+                        <label class="so-leitor" for="name">Seu nome completo</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome completo" autocomplete="name" required>
+                        <label class="so-leitor" for="email">Seu e-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Seu e-mail" autocomplete="email" required>
+                        <label class="so-leitor" for="celular">Seu celular (opcional)</label>
+                        <input type="tel" id="celular" name="celular" placeholder="Seu celular (opcional)" autocomplete="tel">
+                        <label class="so-leitor" for="message">Sua mensagem</label>
+                        <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
+                        <div class="btn-enviar">
+                            <input type="submit" value="ENVIAR">
+                        </div>
+                    </form>
+                </div><!--contato-grade-->
+            </div><!--interface-->
+        </section><!--formulario-->
     </main>
 
     <footer>
@@ -178,12 +278,12 @@
             <div class="line-footer">
                 <div class="flex">
                     <div class="logo-footer">
-                        <img src="images/logo2.jpg" alt="logo">
+                        <img src="images/logo2.jpg" alt="Logo EVA-01" loading="lazy">
                     </div><!--logo-footer-->
                     <div class="btn-social">
-                        <a href="https://www.instagram.com/mikewisllen/"><button><i class="bi bi-instagram"></i></button></a>
-                        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><button><i class="bi bi-linkedin"></i></button></a>
-                        <a href="https://github.com/mikeWisllen"><button><i class="bi bi-github"></i></button></a>
+                        <a href="https://www.instagram.com/mikewisllen/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/mikeWisllen" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
                     </div><!--btn-social-->
                 </div><!--flex-->
             </div><!--line-footer-->
@@ -193,96 +293,5 @@
             </div><!--line-footer-->
         </div><!--interface-->
     </footer>
-    <!-- Animação de letra do home -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            // Função super suave de scroll com easing
-            function smoothScrollTo(element, duration = 1500) {
-                const target = element.offsetTop;
-                const start = window.pageYOffset;
-                const distance = target - start;
-                let startTime = null;
-
-                // Função easing suave (ease-in-out)
-                const easeInOutCubic = (t) => {
-                    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-                };
-
-                const scroll = (currentTime) => {
-                    if (startTime === null) startTime = currentTime;
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    
-                    window.scrollTo(0, start + distance * easeInOutCubic(progress));
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(scroll);
-                    }
-                };
-
-                requestAnimationFrame(scroll);
-            }
-
-            document.addEventListener("DOMContentLoaded", function () {
-                const typedItems = document.querySelector(".typed").getAttribute("data-typed-items").split(", ");
-                new Typed(".typed", {
-                    strings: typedItems,
-                    typeSpeed: 50,
-                    backSpeed: 50,
-                    backDelay: 1500,
-                    loop: true,
-                });
-
-                // Destaque de link ativo na navegação
-                const links = document.querySelectorAll('header a[href^="#"]');
-                
-                links.forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        
-                        const targetId = this.getAttribute('href').substring(1);
-                        const targetElement = document.getElementById(targetId);
-                        
-                        if (targetElement) {
-                            links.forEach(l => l.classList.remove('active'));
-                            this.classList.add('active');
-                            
-                            // Scroll super suave
-                            smoothScrollTo(targetElement, 2000);
-                            
-                            // Fechar menu mobile se aberto
-                            const menuMobile = document.getElementById('menu-mobile');
-                            if (menuMobile && menuMobile.classList.contains('abrir-menu')) {
-                                menuMobile.classList.remove('abrir-menu');
-                                document.getElementById('overlay-menu').style.display = 'none';
-                            }
-                        }
-                    });
-                });
-
-                // Atualizar link ativo ao fazer scroll
-                window.addEventListener('scroll', function() {
-                    const sections = document.querySelectorAll('main section[id]');
-                    let current = '';
-                    
-                    sections.forEach(section => {
-                        const sectionTop = section.offsetTop - 100;
-                        if (pageYOffset >= sectionTop) {
-                            current = section.getAttribute('id');
-                        }
-                    });
-                    
-                    links.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + current) {
-                            link.classList.add('active');
-                        }
-                    });
-                });
-            }); 
-        </script>
-        
 </body>
 </html>
